@@ -88,3 +88,9 @@ border: 0;
     height: 2.5rem;            /* Footer height */
 }
 
+.about_content {
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 1000px;
+}
+
