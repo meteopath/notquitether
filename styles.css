@@ -7,7 +7,7 @@
 .content {
     display: grid;
     gap: 2rem;
-    grid-auto-columns: 1fr;
+    grid-template-columns: 1fr, 1fr;
     grid-template-areas: 
     'one two' 
     'one three';
@@ -17,14 +17,14 @@
     align-items: center;
 }
 
-.brick:nth-child(1) {
+.content article:nth-child(1) {
     grid-area: one;
 }
 
-.brick:nth-child(2) {
+.content article:nth-child(2) {
     grid-area: two;
 }
-.brick:nth-child(3) {
+.content article:nth-child(3) {
     grid-area: three;
 }
 
