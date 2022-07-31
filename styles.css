@@ -1,5 +1,34 @@
-body {
+.headings {
     margin: 0;
     font-family: 'Courier Prime', monospace;
     text-align: center;
 }
+
+.content {
+    display: grid;
+    gap: 2rem;
+    grid-auto-columns: 1fr;
+    grid-template-areas: 
+    'one two' 
+    'one three';
+    padding-block: 2rem;
+    width: min(95%,70rem);
+    margin-inline:auto;
+    align-items: center;
+}
+
+.brick:nth-child(1) {
+    grid-area: one;
+}
+
+.brick:nth-child(2) {
+    grid-area: two;
+}
+.brick:nth-child(3) {
+    grid-area: three;
+}
+
+
+
+
+
