@@ -59,5 +59,9 @@ border: 0;
     column-count: 2;
 }
 
+.more_link {
+    text-decoration:none;
+    color: inherit;
+}
 
 
