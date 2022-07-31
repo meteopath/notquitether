@@ -7,7 +7,6 @@
 .content {
     display: grid;
     gap: 2rem;
-    grid-auto-columns: 1fr;
     grid-template-areas: 
     'one two' 
     'one three';
