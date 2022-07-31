@@ -59,8 +59,8 @@ border: 0;
 }
 
 .footer_item {
-    padding-left: 5rem;
-    padding-right: 5rem;
+    padding-left: 1rem;
+    padding-right:1rem;
 }
 
 .top_titles {
@@ -92,6 +92,11 @@ border: 0;
     height: 2.5rem;            /* Footer height */
 }
 
+#footer_gif {
+    display:flex;
+    justify-content: center;
+}
+
 .about_content {
     display:block;
     margin-right: auto;
@@ -110,6 +115,10 @@ border: 0;
     }
     .footer {
         flex-direction: row;
+    }
+    .footer_item {
+        padding-left: 5rem;
+        padding-right:5rem;
     }
 }
 
