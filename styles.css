@@ -59,6 +59,10 @@ border: 0;
     column-count: 2;
 }
 
+.top_titles > li {
+    padding-right:2em;
+}
+
 .more_link {
     text-decoration:none;
     color: inherit;
