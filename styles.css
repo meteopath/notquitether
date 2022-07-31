@@ -91,9 +91,11 @@ border: 0;
 }
 
 .about_content {
+    display:block;
+    margin-right: auto;
+    margin-left: auto;
     padding-left: 20px;
     padding-right: 20px;
     max-width: 1000px;
-    align: center;
 }
 
