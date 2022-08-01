@@ -59,8 +59,8 @@ border: 0;
 }
 
 .footer_item {
-    padding-left: auto;
-    padding-right:auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .top_titles {
