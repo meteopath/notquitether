@@ -111,7 +111,6 @@ border: 0;
     flex-direction: column;
     justify-content: center;
     padding-top: 50px;
-    padding-bottom: 25px;
 }
 
 @media screen and (min-width: 750px) {
