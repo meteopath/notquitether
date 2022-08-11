@@ -1,0 +1,10 @@
+*.pyc
+/virtualenv/
+/venv/
+/dist/
+/build/
+/*.egg-info
+/.idea/
+.coverage
+htmlcov/
+.DS_Store
