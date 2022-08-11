@@ -1,0 +1,8 @@
+*
+!gutenberg/
+!tests/
+!.coveragerc
+!.noserc
+!README.rst
+!requirements*.pip
+!setup.py

@@ -1,0 +1,63 @@
+name: Daily
+
+on:
+  schedule:
+    - cron: '0 4 * * *'
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+jobs:
+  daily:
+    if: github.repository_owner == 'c-w'
+    runs-on: ${{ matrix.os }}-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        python:
+          - '3.7'
+          - '3.9'
+        os:
+          - windows
+          - macos
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python }}
+
+      - name: 'Upgrade pip and setuptools'
+        run: python -m pip install --upgrade pip setuptools
+
+      - name: 'Install bsddb3 wheel'
+        run: |
+          $mirror = 'https://github.com/c-w/gutenberg/files/7776074/bsddb3-wheels.zip'
+          $pythonVersionMinor = [int]::Parse($(python -c 'import sys; print(sys.version_info.minor)'))
+          $bsddbVersion = '6.2.9'
+          $abiTag = if ($pythonVersionMinor -ge 8) { "cp3$pythonVersionMinor" } else { "cp3${pythonVersionMinor}m" }
+          $wheel = "bsddb3-$bsddbVersion-cp3$pythonVersionMinor-$abiTag-win_amd64.whl"
+          $tmpDir = [System.IO.Path]::GetTempPath()
+          $zipPath = Join-Path "$tmpDir" "wheels.zip"
+          $wheelPath = Join-Path "$tmpDir" "$wheel"
+          Invoke-WebRequest -Uri "$mirror" -OutFile "$zipPath"
+          Expand-Archive "$zipPath" "$tmpDir"
+          pip install "$wheelPath"
+        shell: powershell
+        if: matrix.os == 'windows'
+
+      - name: 'Install bsddb3 dependencies'
+        run: |
+          brew install berkeley-db4
+        if: matrix.os == 'macos'
+
+      - name: 'Install dependencies'
+        run: |
+          pip install -r requirements-dev.pip
+          pip install .
+
+      - name: 'Run tests'
+        run: |
+          nose2

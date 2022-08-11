@@ -1,0 +1,18 @@
+[submodule "binser"]
+	path = binser
+	url = https://github.com/bakpakin/binser.git
+[submodule "gutenberg"]
+	path = gutenberg
+	url = https://github.com/c-w/gutenberg.git
+[submodule "anim8"]
+	path = anim8
+	url = https://github.com/kikito/anim8.git
+[submodule "libraries/hump"]
+	path = libraries/hump
+	url = https://github.com/vrld/hump.git
+[submodule "libraries/profile.lua"]
+	path = libraries/profile.lua
+	url = https://github.com/2dengine/profile.lua.git
+[submodule "gifload"]
+	path = gifload
+	url = https://notabug.org/pgimeno/gifload.git
