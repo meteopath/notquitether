@@ -55,7 +55,7 @@ sounds.roller1:setVolume(1)
 local countWait = 1
 local slugNumber = 0
 function typewriterUpdate(dt)
-    typeTimer.update(dt*1.5*PREFS.speed)
+    typeTimer.update(dt*1.2*PREFS.speed)
     if TYPEWRITER and TYPEWRITER.randomSlug and TYPEWRITER.randomSlug[1] then
         if TYPEWRITER.lineReady then
             TYPEWRITER:type()
