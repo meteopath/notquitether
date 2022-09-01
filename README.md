@@ -9,7 +9,14 @@ App for desktop/laptop. Library of over 15 thousand books from Project Gutenberg
 Read or flip through at your own pace. "Close" one book and move on to the next. Each book, once closed, is added to a session catalog called "My Folder", where the user can go to view metadata for all the books seen or to reopen one and read some more.
 
 ### Virtual Typewriter
-The Virtual Typewriter requires users to "type" (pressing any keys) to reveal the text of the book bit by bit. Type to the end of the page. The page is removed from the Typewriter and presented for review. The user is asked to choose whether to continue to the next page or to load the next book. Typing in the typewriter can always be interrupted or bypassed completely. Pressing "1" interrupts typing at the current place. Pressing "2" jumps straight to the end of the page. In both cases, the page is removed from the Virtual Typewriter and presented for immediate review. Press "escape" or click the typewriter icon in the upper left of the screen to close the Virtual Typewriter and move to the Bookshop view.
+The Virtual Typewriter requires users to "type" (pressing any keys) to reveal the text of the book bit by bit. Type to the end of the page. The page is removed from the Typewriter and presented for review. The user is asked to choose whether to continue to the next page or to load the next book. Typing in the typewriter can always be interrupted or bypassed completely with hot keys "1" and "2". Press "escape" or click the typewriter icon in the upper left of the screen to close the Virtual Typewriter and move to the Bookshop view.
+<details>
+  <summary>gifs: Virtual Typewriter</summary>
+  
+  ![virtual typewriter](/assets/virtual_typewriter.gif)
+  ![page review](/assets/page_review.gif)
+  
+ </details>
 
 ### Bookshop
 The Bookshop view allows for hot-key navigation -- "o" to page forward, "j" to page back, "l" to skip to the next chapter, and "u" to load a new book. Skip lightly. The Bookshop is the anti-Virtual Typewriter. It is anti-immersive. Engage with the texts from a distance, like in the old days walking the stacks in Barnes & Noble. 
