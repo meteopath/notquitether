@@ -19,10 +19,22 @@ The Virtual Typewriter requires users to "type" (pressing any keys) to reveal th
  </details>
 
 ### Bookshop
-The Bookshop view allows for hot-key navigation -- "o" to page forward, "j" to page back, "l" to skip to the next chapter, and "u" to load a new book. Skip lightly. The Bookshop is the anti-Virtual Typewriter. It is anti-immersive. Engage with the texts from a distance, like in the old days walking the stacks in Barnes & Noble. 
+The Bookshop view allows for hot-key navigation -- "o" to page forward, "j" to page back, "l" to skip to the next chapter, and "u" to load a new book. Skip lightly. The Bookshop is the anti-Virtual Typewriter. It is anti-immersive. Engage with the texts from a distance, like in the old days walking the stacks in Barnes & Noble.
+<details>
+  <summary>gif: Bookshop</summary>
+  
+  ![bookshop](/assets/bookshop.gif)
+  
+ </details>
 
 ### My Folder
-My Folder, the session catalog, is also hot-key enabled. It is designed for the same arm's-distance, breezy experience as the Bookshop. "My Folder" is accessed from any page by opening Settings. (To open Settings, either click on the mug icon in the upper right of the screen or press the "backspace" key.) Note that only "closed" books are added to My Folder. My Folder is empty at the start of every session. Your first book is added to My Folder when you "close" it and move on to your second book. 
+My Folder, the session catalog, is also hot-key enabled. It is designed for the same arm's-distance, breezy experience as the Bookshop. "My Folder" is accessed from any page by opening Settings. (To open Settings, either click on the mug icon in the upper right of the screen or press the "backspace" key.) Note that only "closed" books are added to My Folder. My Folder is empty at the start of every session. Your first book is added to My Folder when you "close" it and move on to your second book.
+<details>
+  <summary>gif: My Folder</summary>
+  
+  ![bookshop](/assets/settings.gif)
+  
+ </details>
 
 ### Settings
 Settings gives the user options to target the kind of books they want to see ("Search criteria") and to increase the app speed. For Search criteria, the user can choose to see books within certain bands of popularity (quantified as downloads/mo. from the Project Gutenberg website) or books that were more recently uploaded to the Project Gutenberg site. Game speed, which regulates the Virtual typewriter, can be raised to 1.25x, 1.5x or 2x.
