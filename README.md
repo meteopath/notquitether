@@ -1,15 +1,15 @@
 ## NotQuiteTher
 An e-reader/Project Gutenberg portal.
 
-App for desktop/laptop. Library of over 15 thousand books from Project Gutenberg. Books are presented at random. The user has two choices for reading:
+App for desktop/laptop. Read books at random. Library of over 15 thousand books from Project Gutenberg. User has two choices for reading:
 
 1. The **Virtual Typewriter** for an immersive, first-person writer experience
 2. The **Bookshop** for a breezy, arm's-distance view
 
-Read or flip through at your own pace. "Close" one book and move on to the next. Each book, once closed, is added to a session catalog called "My Folder", where the user can go to view metadata for all the books seen or to reopen one and read some more.
+Read or flip through at your own pace. "Close" one book and move on to the next. Each book, once closed, is added to a session catalog called "My Folder", where the user can go to view metadata or reopen a closed book and read some more.
 
 ### Virtual Typewriter
-The Virtual Typewriter makes you "type" (pressing any keys) to reveal the text of the book bit by bit. Type to the end of the page, then review your work. Choose whether to continue to the next page or to load the next book. Interrupt or bypass typing completely with hot keys "1" and "2". To exit, press "escape" or click the typewriter icon in the upper left of the screen. This closes the Virtual Typewriter and moves you to the Bookshop view.
+The Virtual Typewriter makes you "type" (pressing any keys) to reveal the text of the book bit by bit. Type to the end of the page, then review your work. Choose whether to move on to the next page or to scrap it instead and move on to the next book. Shortcuts available by hot key. You can interrupt typing any page by pressing "1". Bypass typing any page by pressing "2". To exit, press "escape" or click the typewriter icon in the upper left of the screen. This closes the Virtual Typewriter and moves you to the Bookshop view.
 <details>
   <summary>gifs: Virtual Typewriter</summary>
   
@@ -19,7 +19,7 @@ The Virtual Typewriter makes you "type" (pressing any keys) to reveal the text o
  </details>
 
 ### Bookshop
-The Bookshop is best with hot keys: "o" to page forward, "j" to page back, "l" to skip to the next chapter, and "u" to load a new book. Skip lightly for an anti-immersive experience. The Bookshop is the anti-Virtual Typewriter. Read your books from a distance, like in the old days when you walked the stacks in Barnes & Noble picking them up and putting them down.
+The Bookshop is best with hot keys. Press "o" to page forward, "j" to page back, "l" to skip to the next chapter, and "u" to load a new book. Skip lightly for an anti-immersive experience. Like walking the stacks. The Bookshop is the anti-Virtual Typewriter. Read your books from a distance, picking them up and putting them down.
 <details>
   <summary>gif: Bookshop</summary>
   
@@ -28,7 +28,7 @@ The Bookshop is best with hot keys: "o" to page forward, "j" to page back, "l" t
  </details>
 
 ### My Folder
-My Folder, the session catalog, is also best with hot keys. Open it up and page through. You have a list of books seen in session and each book's details (title, author, downloads/month, subjects, weblink) as well as the portion of the text previously viewed. Option to reopen any book in the folder and pick up where you left off.
+My Folder, the session catalog, is also best with hot keys. Open it up and page through. Books seen in session are listed. Each book has a detail page with title, author, downloads/month, subjects and weblink, as well as the portion of the text previously viewed. Reopen any book in the folder with hot key "Enter" and "k" to confirm.
 <details>
   <summary>gif: My Folder</summary>
   
@@ -37,7 +37,7 @@ My Folder, the session catalog, is also best with hot keys. Open it up and page 
  </details>
 
 ### Settings
-Settings lets you target the kind of books they want to see ("Search criteria") and increase the app speed. For Search criteria, the user can choose to see books within certain bands of popularity (quantified as downloads/mo. from the Project Gutenberg website) or books that were more recently uploaded to the Project Gutenberg site. Game speed, which regulates the Virtual typewriter, can be raised to 1.25x, 1.5x or 2x.
+Settings lets you target the kind of books you want to see. Use "Search criteria" to choose books within certain bands of popularity (quantified as downloads/mo. from the Project Gutenberg website) or books that were more recently uploaded to the Project Gutenberg site. Settings also lets you increase the speed of the Virtual typewriter to 1.25x, 1.5x or 2x.
 
 ### Navigation
 App navigation is best with hot-keys. The mouse is not needed or recommended. Hot-key navigation is faster and more fun. Press "i" for the key map to every page (or click the "i" icon in the bottom left of the screen). There is a key shortcut for every button and icon. Mouse navigation, while not recommended, is enabled. Toggle between the Virtual Typewriter and the Bookshop by clicking the typewriter icon in the upper left of the screen (or just press "escape"). Access settings by clicking the mug icon in the upper right of the screen (or just press "backspace"). Click the on-screen buttons to navigate the Bookshop and My Folder.
@@ -63,7 +63,7 @@ NQT runs on books from Project Gutenberg (gutenberg.org). The app comes loaded w
 
 
 ### Lua/Python to Pure Lua
-For most of its time in development, NQT was a hybrid Lua/Python app. It was mostly Lua, but I needed libraries written in Python to do two jobs, one job that was essential -- the weblink to Project Gutenberg to download books -- and one job that was nice to have, but inessential -- a gif maker that allowed users to select portions of a text and create downloadable typewriter gifs. I couldn't find Lua libraries to do these jobs, so I wrote the functionalities in two Python files: a getbook downloader supported by the Python library c-w gutenberg and a gif maker supported by Python PIL. I linked the Lua and Python files through the command line. When the core Lua app needed a new book or a gif, it made a command to the Python files via io.popen and passed the necessary arguments in a string. The Python files filled the request and outputted json files and gifs to the LOVE save folder, where the core Lua app found them and read them into memory for use in the run. This struck me as inefficient. But it worked in development on my machine. The problem came when I had to zip things up for deployment. The commands issued via io.popen no longer found their way to the Python files. I was stuck for a few weeks reading and trying things that didn't work. I was bailed out by the LOVE forum, where a contributor looked at my problem and wrote me a socket in Lua (I inserted it into my code as "get_gutenberg_text()" on line 13 of textPrep.lua), which was something I'd tried and failed to do for myself. At that point I was free to dump Python altogether. I tried get a Lua image library to replace PIL, but I couldn't figure it out, so I cut the gif making functionality and was left with a slightly slimmer and much more efficient app.
+For most of its time in development, NQT was a hybrid Lua/Python app. It was mostly Lua, but I needed libraries written in Python to do two jobs, one job that was essential -- the weblink to Project Gutenberg to download books -- and one job that was nice to have, but inessential -- a gif maker that allowed users to select portions of a text and create downloadable typewriter gifs. I couldn't find Lua libraries to do these jobs, so I wrote the functionalities in two Python files: a getbook downloader supported by the Python library c-w gutenberg and a gif maker supported by Python PIL. I linked the Lua and Python files through the command line. When the core Lua app needed a new book or a gif, it made a command to the Python files via io.popen and passed the necessary arguments in a string. The Python files filled the request and outputted json files and gifs to the LOVE save folder, where the core Lua app found them and read them into memory for use in the run. This struck me as inefficient. But it worked in development on my machine. The problem came when I had to zip things up for deployment. The commands issued via io.popen no longer found their way to the Python files. I was stuck for a few weeks reading and trying things that didn't work. I was bailed out by the LOVE forum, where a contributor looked at my problem and wrote me a socket in Lua (I inserted it into my code as "get_gutenberg_text()" on line 13 of textPrep.lua), which was something I'd tried and failed to do for myself. At that point I was free to dump Python altogether. I tried to get a Lua image library to replace PIL, but I couldn't figure it out, so I cut the gif making functionality and was left with a slightly slimmer and much more efficient app.
 
 ### Next steps
 I would like to get this app on the App Store. But I've been stuck for a month. My builds and archives are successful in Xcode. But every attempt to upload fails with a message "Error Analyzing App Version". If you have any insight, I would be very happy to hear it. I have a [post](https://love2d.org/forums/viewtopic.php?f=4&t=93621&p=250107&hilit=version#p250107) on the LOVE forum with a few more details.
